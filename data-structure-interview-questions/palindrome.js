@@ -30,16 +30,19 @@ const isPalindrome = (s) => {
 };
 
 var linkedPalindrome = function (head) {
-	for (let i = 0; i < parseInt(head.length / 2); i++) {
-		console.log(
-			head[i],
-			head[head.length - 1 - i],
-			head[i] !== head[head.length - 1 - i]
-		);
-		if (head[i] !== head[head.length - 1 - i]) return false;
+	const array = [];
+    while(head !== null){
+        array.push(head.val);
+        head = head.next;
+    }
+    for (let i = 0; i < parseInt(array.length / 2); i++) {
+		if (String(array[i]) !== String(array[array.length - 1 - i])){
+             return false;
+        }
+        continue;
 	}
 	return true;
-	// return head.join('') === head.reverse().join('');
+	// return array.join('') === array.reverse().join('');
 };
 
 var firstPalindrome = function (head) {
