@@ -1,7 +1,7 @@
 import Image from 'next/image';
 const getData = async (id: string) => {
 	const res = await fetch(
-		`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}`
+		`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.MOVIE_API_KEY}`
 	);
 	const movie = await res.json();
 	return movie;
