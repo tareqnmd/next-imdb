@@ -16,8 +16,7 @@ const getData = async (searchParams: any) => {
 };
 
 const Home = async ({ searchParams }: any) => {
-	const results = await getData(searchParams);
-
+	const { results } = await getData(searchParams);
 	return <Results results={results} />;
 };
 
