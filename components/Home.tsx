@@ -4,7 +4,11 @@ const API_KEY = process.env.MOVIE_API_KEY;
 const getData = async (searchParams: any) => {
 	const { genre } = searchParams;
 	const api_genre =
-		genre === 'fetchTopRated' ? `/movie/top_rated` : `/trending/all/week`;
+		genre === 'top-rated'
+			? `/movie/top_rated`
+			: 'trending'
+			? `/trending/all/week`
+			: '';
 	const res = await fetch(
 		`https://api.themoviedb.org/3${api_genre}?api_key=${API_KEY}&language=en-US&page=1`,
 		{ cache: 'no-store' }
