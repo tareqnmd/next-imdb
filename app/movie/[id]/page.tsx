@@ -1,4 +1,4 @@
-import SingleMovie from '@/components/SingleMovie';
+import SingleMovie from '@/components/movie-details/SingleMovie';
 
 export default async function MoviePage({
 	params,
