@@ -1,4 +1,4 @@
-import MovieFilter from '@/components/MovieFilter';
+import MovieFilter from '@/components/filter/MovieFilter';
 import Navbar from '@/components/navbar/Navbar';
 import AppProvider from '@/components/provider/AppProvider';
 import '@/styles/global.scss';
