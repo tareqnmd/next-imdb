@@ -1,4 +1,4 @@
-import SearchBox from '@/components/SearchBox';
+import MovieFilter from '@/components/MovieFilter';
 import Navbar from '@/components/navbar/Navbar';
 import AppProvider from '@/components/provider/AppProvider';
 import '@/styles/global.scss';
@@ -21,8 +21,14 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<AppProvider>
 					<Navbar />
-					<SearchBox />
-					{children}
+					<div className="container mx-auto my-6">
+						<div className="grid grid-cols-6 gap-4">
+							<div className="col-span-1">
+								<MovieFilter />
+							</div>
+							<main className="col-span-5">{children}</main>
+						</div>
+					</div>
 				</AppProvider>
 			</body>
 		</html>
