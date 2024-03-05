@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import DarkModeSwitch from './DarkModeSwitch';
-import LinkItem from './NavbarItem';
+import DarkModeSwitch from '../DarkModeSwitch';
+import LinkItem from './LinkItem';
 const links = [
 	{ title: 'Trending', link: 'trending' },
 	{ title: 'Top Rated', link: 'top-rated' },
@@ -11,7 +11,7 @@ export default function Navbar() {
 		<div className="bg-white dark:bg-gray-900 shadow">
 			<div className="container mx-auto flex items-center gap-2 py-2">
 				<Link
-					className="mr-auto text-xl text-black dark:text-white"
+					className="mr-auto text-xl font-bold text-black dark:text-white"
 					href="/"
 				>
 					Next Movie

@@ -1,5 +1,5 @@
-import Navbar from '@/components/Navbar';
 import SearchBox from '@/components/SearchBox';
+import Navbar from '@/components/navbar/Navbar';
 import AppProvider from '@/components/provider/AppProvider';
 import '@/styles/global.scss';
 import { Inter } from 'next/font/google';
