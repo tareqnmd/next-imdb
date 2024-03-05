@@ -5,16 +5,17 @@ import { FiThumbsUp } from 'react-icons/fi';
 export default function MovieCard({ result }: any) {
 	return (
 		<Link
-			className="cursor-pointer shadow-sm rounded-lg border transition-shadow duration-200"
+			className="cursor-pointer shadow-sm hover:shadow-lg rounded-lg border transition-shadow duration-200 overflow-hidden"
 			href={`/movie/${result.id}`}
 		>
 			<Image
 				src={`https://image.tmdb.org/t/p/original/${
 					result.backdrop_path || result.poster_path
 				}`}
-				width={500}
-				height={300}
-				className="sm:rounded-t-lg group-hover:opacity-75 transition-opacity duration-300"
+				width="0"
+				height="0"
+				sizes="100vw"
+				className="overflow-hidden w-full object-cover max-h-[160px]"
 				alt=""
 			></Image>
 			<div className="p-2">
