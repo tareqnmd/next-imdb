@@ -7,7 +7,7 @@ export default function LinkItem({ link }: any) {
 		<div>
 			<Link
 				className="text-sm text-black dark:text-white"
-				href={`?genre=${link.link}`}
+				href={`/?genre=${link.link}`}
 			>
 				{link.title}
 			</Link>

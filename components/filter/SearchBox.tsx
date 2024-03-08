@@ -18,12 +18,12 @@ const SearchBox = () => {
 			<input
 				type="text"
 				placeholder="Search keywords..."
-				className="placeholder-gray-500 border rounded bg-white p-1"
+				className="placeholder-gray-500 border border-gray-900 text-black dark:border-white rounded bg-white p-1"
 				value={search}
 				onChange={(e) => setSearch(e.target.value)}
 			/>
 			<button
-				className="border rounded bg-black text-white p-1 disabled:text-gray-400"
+				className="rounded bg-gray-900 dark:bg-white dark:text-black text-white p-1 disabled:text-gray-400"
 				disabled={search === ''}
 			>
 				Search

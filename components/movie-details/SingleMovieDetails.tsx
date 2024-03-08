@@ -1,6 +1,9 @@
 import Image from 'next/image';
+import { FaVideo } from 'react-icons/fa';
+import Badge from '../common/Badge';
 
 const SingleMovieDetails = async ({ movie }: any) => {
+	console.log('movie', movie);
 	return (
 		<div className="w-full">
 			<div className="grid gap-4">
@@ -16,15 +19,23 @@ const SingleMovieDetails = async ({ movie }: any) => {
 				></Image>
 				<div className="grid gap-2">
 					<h2 className="text-lg font-bold">{movie.title || movie.name}</h2>
+					<div className="flex items-center gap-2 mb-2">
+						{movie.genres.map((item: any) => (
+							<Badge
+								key={item.id}
+								name={item.name}
+							/>
+						))}
+					</div>
+					<div className="flex items-center gap-2 border rounded px-2 py-1 w-max">
+						<FaVideo />
+						<span>{movie.runtime} Min</span>
+					</div>
 					<p className="text-lg">{movie.overview}</p>
-					<p className="flex items-center gap-2">
+					<div className="flex items-center gap-2">
 						<span className="font-semibold">Date Released:</span>
 						<span>{movie.release_date || movie.first_air_date}</span>
-					</p>
-					<p className="flex items-center gap-2">
-						<span className="font-semibold">Rating:</span>
-						<span>{movie.vote_count}</span>
-					</p>
+					</div>
 				</div>
 			</div>
 		</div>
