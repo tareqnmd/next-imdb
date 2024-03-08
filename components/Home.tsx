@@ -2,17 +2,21 @@ import Results from './Results';
 const API_KEY = process.env.MOVIE_API_KEY;
 
 const getData = async (searchParams: any) => {
-	const { genre } = searchParams;
+	const { genre, search } = searchParams;
 	const api_genre =
 		genre === 'top-rated'
 			? `/movie/top_rated`
 			: 'trending'
 			? `/trending/all/week`
 			: '';
-	const res = await fetch(
-		`https://api.themoviedb.org/3${api_genre}?api_key=${API_KEY}&language=en-US&page=1`,
-		{ cache: 'no-store' }
-	);
+	const res = search
+		? await fetch(
+				`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}&page=1`
+		  )
+		: await fetch(
+				`https://api.themoviedb.org/3${api_genre}?api_key=${API_KEY}&page=1`,
+				{ cache: 'no-store' }
+		  );
 	if (!res.ok) {
 		throw new Error('Failed to fetch data');
 	}

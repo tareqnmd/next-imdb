@@ -8,7 +8,7 @@ const SearchBox = () => {
 	const router = useRouter();
 	const handleSubmit = (e: any) => {
 		e.preventDefault();
-		router.push(`/search/${search}`);
+		router.push(`/?search=${search}`);
 	};
 	return (
 		<form
