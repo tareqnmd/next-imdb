@@ -11,11 +11,11 @@ const getData = async (searchParams: any) => {
 			: '';
 	const res = search
 		? await fetch(
-				`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}&page=1`,
+				`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}`,
 				{ cache: 'no-store' }
 		  )
 		: await fetch(
-				`https://api.themoviedb.org/3${api_genre}?api_key=${API_KEY}&page=1`,
+				`https://api.themoviedb.org/3${api_genre}?api_key=${API_KEY}`,
 				{ cache: 'no-store' }
 		  );
 	if (!res.ok) {
