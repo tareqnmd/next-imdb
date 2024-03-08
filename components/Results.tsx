@@ -1,4 +1,5 @@
 import MovieCard from './MovieCard';
+import Pagination from './common/Pagination';
 import MovieFilter from './filter/MovieFilter';
 
 const Results = ({ results }: any) => {
@@ -16,6 +17,7 @@ const Results = ({ results }: any) => {
 						/>
 					))}
 				</div>
+				<Pagination total={results.length ?? 0} />
 			</main>
 		</div>
 	);
