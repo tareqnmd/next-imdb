@@ -25,8 +25,13 @@ const getData = async (searchParams: any) => {
 };
 
 const Home = async ({ searchParams }: any) => {
-	const { results } = await getData(searchParams);
-	return <Results results={results} />;
+	const { results, total_results, total_pages } = await getData(searchParams);
+	return (
+		<Results
+			results={results}
+			pagination={{ totla: total_results, pages: total_pages }}
+		/>
+	);
 };
 
 export default Home;

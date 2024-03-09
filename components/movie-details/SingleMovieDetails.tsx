@@ -1,22 +1,16 @@
-import Image from 'next/image';
 import { FaVideo } from 'react-icons/fa';
 import Badge from '../common/Badge';
+import MovieImage from '../common/MovieImage';
 
 const SingleMovieDetails = async ({ movie }: any) => {
-	console.log('movie', movie);
+	const movie_image = movie.backdrop_path || movie.poster_path;
 	return (
 		<div className="w-full">
 			<div className="grid gap-4">
-				<Image
-					src={`https://image.tmdb.org/t/p/original/${
-						movie.backdrop_path || movie.poster_path
-					}`}
-					width="0"
-					height="0"
-					sizes="100vw"
-					className="overflow-hidden w-full"
-					alt=""
-				></Image>
+				<MovieImage
+					image={movie.backdrop_path || movie.poster_path}
+					title={movie.title || movie.name}
+				/>
 				<div className="grid gap-2">
 					<h2 className="text-lg font-bold">{movie.title || movie.name}</h2>
 					<div className="flex items-center gap-2 mb-2">

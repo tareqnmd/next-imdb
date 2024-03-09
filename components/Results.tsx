@@ -1,8 +1,7 @@
 import MovieCard from './MovieCard';
-import Pagination from './common/Pagination';
 import MovieFilter from './filter/MovieFilter';
 
-const Results = ({ results }: any) => {
+const Results = ({ results, pagination }: any) => {
 	return (
 		<div className="grid grid-cols-1 lg:grid-cols-8 xl:grid-cols-10 gap-4">
 			<div className="col-span-1 lg:col-span-2 xl:col-span-2">
@@ -13,11 +12,10 @@ const Results = ({ results }: any) => {
 					{results?.map((result: any) => (
 						<MovieCard
 							key={result.id}
-							result={result}
+							movie={result}
 						/>
 					))}
 				</div>
-				<Pagination total={results.length ?? 0} />
 			</main>
 		</div>
 	);
